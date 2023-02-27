@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1ad5c271c2.js" crossorigin="anonymous"></script>
+    <title>Curriculum Vitae</title>
+</head>
+
+<body>
+    <nav>
+        <img src="Imagenes/perfil.jpg" alt="Foto de Luis Bates" />
+        <ul id="navbar">
+            <a href="#DatosPer"><li class="boton" ><i class="fa-solid fa-address-card"></i>Datos Personales</li></a>
+            <a href="#FormAcad"><li class="boton " ><i class="fa-solid fa-book"></i>Formación Academica</li></a>
+            <a href="#ExpProf"><li class="boton" ><i class="fa-solid fa-briefcase"></i>Experiencia Profesional</li></a>
+        </ul>
+        <button class="boton" type="button" id="goBack">Volver al CV<i class="fa-solid fa-arrow-left"></i></button>
+        <button class="boton" type="button" id="contacto">Planilla de contacto<i class="fa-solid fa-file-pen"></i></button>
+    </nav>
+    <div id="cuerpo">
+        <section class="card" id="DatosPer">
+            <h1>Luis Bates</h1>
+            <p>
+                Aquí iría una breve descripción de mi persona. Mido un metro ochenta y
+                uno, tengo un sillón azul <br />
+                En mi cuarto, hay un baúl, y me gusta el almendrado Me despierto
+                alunado, mi madre es medio terca <br />
+                Aunque nunca estuve preso, anduve cerca Soy de Aries, pelo castaño
+                <br />
+                Algo tacaño, y no colecciono nada Guardo la ropa ordenada, me aburro
+                en Nochebuena <br />
+                Si estornudo, no hago ruido, y no hablo con la boca llena
+            </p>
+            <ul>
+                <li>e-Mail: luis.bates@example.com</li>
+                <li>Fecha de Nacimiento: 3/1/1992</li>
+                <li>Teléfono: (729) 885-5851</li>
+                <li>Disponibilidad: Inmediata</li>
+                <li>Estado Civil: Viudo con 2 hijas</li>
+            </ul>
+        </section>
+        <section class="card" id="FormAcad">
+            <ul>
+                <li>1999: Primaria</li>
+                <li>2009: Secundaria</li>
+                <li>
+                    2013: Licenciado en Calle en la Univesidad de la Vida (Recibido con
+                    Honores)
+                </li>
+                <li>
+                    2015: Cursos de Udemy de Programación, Excel, CSS, JS y Maquillaje
+                </li>
+                <li>2018: Titulo terciario en Lorem Ipsun</li>
+                <li>
+                    2020: Cursos en como vivir en encierro, Lvado correcto de manos,
+                    como salir de fiesta sin ser percibido
+                </li>
+            </ul>
+        </section>
+        <section class="card" id="ExpProf">
+            <ul>
+                <li>1998: Fabrica de juguetes "Child Exploitation S.A."</li>
+                <li>2011: Atendiendo un Kiosko "26Hs"</li>
+                <li>2013: lorem lorem ipsun ipsun</li>
+                <li>2016: Aliquam alias vero exercitationem.</li>
+                <li>2020: Officia reiciendis quae blanditiis.</li>
+            </ul>
+        </section>        
+    </div>
+        <form class="card" id="formulario" name="formulario" method="post">
+            <label for="nombre">¿Con quien tengo el gusto?</label><br>
+            <input class="InpuText" type="text" id="nombre" name="nombre" placeholder="Escriba aquí su nombre completo"><br>
+            <p>¿Se comunica en representación de una empresa o comercio?</p>
+            <input type="radio" id="si" name="empresa" value="Si">
+            <label for="si">Si</label><br>
+            <input type="radio" id="no" name="empresa" value="No" checked>
+            <label for="no">No</label><br>
+            <label for="nombreEmpresa">Por favor, indique el nombre de la empresa o comercio: </label><br>
+            <input class="InpuText" type="text" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre de la empresa o comercio"
+                disabled><br>
+            <label for="email">e-Mail: </label>
+            <input class="InpuText" type="email" name="email" id="email" placeholder="correo@ejemplo.com"> <br>
+            <label for="confirmEmail">Confirme el e-Mail: </label>
+            <input class="InpuText" type="email" name="confirmEmail" id="confirmEmail" placeholder="Escriba el mismo e-Mail de recién"> <br>
+            <textarea class="InpuText" id="mensaje" name="Mensaje" rows="10" cols="30" placeholder="Motivo del contacto"></textarea><br>
+            <input type="submit" value="Submit" id="submit">
+    
+            <div class="card" id="errores"></div>
+        </form>
+    <div class="card" id="enviado"></div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
