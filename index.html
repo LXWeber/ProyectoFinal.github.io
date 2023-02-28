@@ -17,17 +17,24 @@
     <nav>
         <img src="Imagenes/perfil.jpg" alt="Foto de Luis Bates" />
         <ul id="navbar">
-            <a href="#DatosPer"><li class="boton" ><i class="fa-solid fa-address-card"></i>Datos Personales</li></a>
-            <a href="#FormAcad"><li class="boton " ><i class="fa-solid fa-book"></i>Formación Academica</li></a>
-            <a href="#ExpProf"><li class="boton" ><i class="fa-solid fa-briefcase"></i>Experiencia Profesional</li></a>
+            <a href="#presentacion"><li class="boton" ><i class="fa-solid fa-person fa-fw"></i>Presentación</li></a>
+            <a href="#DatosPer"><li class="boton" ><i class="fa-solid fa-address-card fa-fw"></i>Datos Personales</li></a>
+            <a href="#FormAcad"><li class="boton " ><i class="fa-solid fa-book fa-fw"></i> Formación Academica</li></a>
+            <a href="#ExpProf"><li class="boton" ><i class="fa-solid fa-briefcase fa-fw"></i>Experiencia Profesional</li></a>
         </ul>
-        <button class="boton" type="button" id="goBack">Volver al CV<i class="fa-solid fa-arrow-left"></i></button>
-        <button class="boton" type="button" id="contacto">Planilla de contacto<i class="fa-solid fa-file-pen"></i></button>
+        <div id="juntoAForm" style="display: none;">
+            <h2>Luis Bates</h2>
+            <br/><br/>
+            <p><i>"Desarrollador Web y en el verano pinto casas"</i></p>
+        </div>
+        <button class="boton" type="button" id="goBack"><i class="fa-solid fa-arrow-left fa-fw"></i>Volver al CV</button>
+        <button class="boton" type="button" id="contacto"><i class="fa-solid fa-file-pen fa-fw"></i>Planilla de contacto</button>
     </nav>
     <div id="cuerpo">
-        <section class="card" id="DatosPer">
+        <section class="card" id="presentacion">
             <h1>Luis Bates</h1>
             <p>
+                Me presento, soy Luis Bates, tengo tantos años y soy desarrollador web aunque jamás he ejercido <br/>
                 Aquí iría una breve descripción de mi persona. Mido un metro ochenta y
                 uno, tengo un sillón azul <br />
                 En mi cuarto, hay un baúl, y me gusta el almendrado Me despierto
@@ -36,41 +43,51 @@
                 <br />
                 Algo tacaño, y no colecciono nada Guardo la ropa ordenada, me aburro
                 en Nochebuena <br />
-                Si estornudo, no hago ruido, y no hablo con la boca llena
+                Si estornudo, no hago ruido, y no hablo con la boca llena <br/>
+                Lorem ipsun bla bla bla etcetera etcetera y en el verano pinto casas.
             </p>
+        </section>
+        <section class="card" id="DatosPer">
+            <h3>Datos Personales:</h3> <br/>
             <ul>
                 <li>e-Mail: luis.bates@example.com</li>
-                <li>Fecha de Nacimiento: 3/1/1992</li>
+                <li>Fecha de Nacimiento: 3/1/1995</li>
                 <li>Teléfono: (729) 885-5851</li>
                 <li>Disponibilidad: Inmediata</li>
                 <li>Estado Civil: Viudo con 2 hijas</li>
             </ul>
         </section>
         <section class="card" id="FormAcad">
+            <h3>Formación Académica:</h3> <br/>
             <ul>
                 <li>1999: Primaria</li>
                 <li>2009: Secundaria</li>
                 <li>
-                    2013: Licenciado en Calle en la Univesidad de la Vida (Recibido con
+                    2013: Licenciado en Calle por la "Univesidad Politécnica de la Vida" (Recibido con
                     Honores)
                 </li>
                 <li>
                     2015: Cursos de Udemy de Programación, Excel, CSS, JS y Maquillaje
                 </li>
                 <li>2018: Titulo terciario en Lorem Ipsun</li>
+                <li>2019: Curso de pintureria de casas a domicilio</li>
                 <li>
-                    2020: Cursos en como vivir en encierro, Lvado correcto de manos,
-                    como salir de fiesta sin ser percibido
+                    2020: Cursos en como vivir en encierro si enloquecer, higienización correcta de manos,
+                    tutorial: Como salir de fiesta sin ser percibido
                 </li>
             </ul>
         </section>
         <section class="card" id="ExpProf">
+            <h3>Experiencia Profesional:</h3> <br/>
             <ul>
                 <li>1998: Fabrica de juguetes "Child Exploitation S.A."</li>
                 <li>2011: Atendiendo un Kiosko "26Hs"</li>
                 <li>2013: lorem lorem ipsun ipsun</li>
-                <li>2016: Aliquam alias vero exercitationem.</li>
-                <li>2020: Officia reiciendis quae blanditiis.</li>
+                <li>Marzo de 2014 hasta Diciembre de 2016: Pequeño emprendimiento de mendigo</li>
+                <li>2017 hasta finales de 2018: Aliquam alias vero exercitationem.</li>
+                <li>2019: Pintando casas a domicilio</li>
+                <li>2020: Pintando casas por Zoom</li>
+                <li>2021: Officia reiciendis quae blanditiis.</li>
             </ul>
         </section>        
     </div>
@@ -78,13 +95,12 @@
             <label for="nombre">¿Con quien tengo el gusto?</label><br>
             <input class="InpuText" type="text" id="nombre" name="nombre" placeholder="Escriba aquí su nombre completo"><br>
             <p>¿Se comunica en representación de una empresa o comercio?</p>
-            <input type="radio" id="si" name="empresa" value="Si">
+            <input type="radio" id="si" name="empresa" value="Si" checked>
             <label for="si">Si</label><br>
-            <input type="radio" id="no" name="empresa" value="No" checked>
+            <input type="radio" id="no" name="empresa" value="No">
             <label for="no">No</label><br>
             <label for="nombreEmpresa">Por favor, indique el nombre de la empresa o comercio: </label><br>
-            <input class="InpuText" type="text" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre de la empresa o comercio"
-                disabled><br>
+            <input class="InpuText" type="text" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre de la empresa o comercio"><br>
             <label for="email">e-Mail: </label>
             <input class="InpuText" type="email" name="email" id="email" placeholder="correo@ejemplo.com"> <br>
             <label for="confirmEmail">Confirme el e-Mail: </label>
@@ -97,6 +113,7 @@
     <div class="card" id="enviado"></div>
 
     <script src="js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 
 </html>

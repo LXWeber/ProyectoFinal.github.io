@@ -1,14 +1,13 @@
 document.getElementById("contacto").onclick=function(){
-    console.log("funca!")
     cuerpo.style.display='none';
     formulario.style.display='block';
     goBack.style.display="block";
     contacto.style.display="none";
     navbar.style.display="none";
+    juntoAForm.style.display="block";
 };
 
 document.getElementById("goBack").onclick=function(){
-    console.log("también funca!")
     formulario.reset();
     errores.innerHTML="";
     errores.style.display='none';
@@ -18,6 +17,7 @@ document.getElementById("goBack").onclick=function(){
     goBack.style.display="none";
     contacto.style.display="block";
     navbar.style.display="block";
+    juntoAForm.style.display="none";
 };
 
 document.forms["formulario"]["si"].onclick=function(){
@@ -48,7 +48,7 @@ const regex = {
 
 const campos = {
 	nombre: false,
-    nombreEmpresa: true,
+    nombreEmpresa: false,
 	email: false,
 	confirmEmail: false,
     mensaje: false
@@ -60,7 +60,6 @@ const validar =(e)=>{
             validaInputs(regex.nombre, e.target, e.target.id);
         break;
         case "nombreEmpresa":
-                console.log("Se detecto que está ingresando nombre de empresa");
                 validaInputs(regex.nombreEmpresa, e.target, e.target.id);
         break;
         case "email":
@@ -96,7 +95,6 @@ const validaIguales=(otro, id)=>{//compara los valores de 2 id pasados por param
 }
 
 formulario.addEventListener('submit', (e) => {// Lo que ejecuta el boton de enviar
-    console.log("Entró al addEventListener")
     e.preventDefault();// evitamos que cambie la url
 	const camposError = {};
     const mensajesError = [
@@ -110,13 +108,12 @@ formulario.addEventListener('submit', (e) => {// Lo que ejecuta el boton de envi
     const keys = Object.keys(campos);
     if(campos.nombre && campos.nombreEmpresa && campos.email && campos.confirmEmail && campos.mensaje){
         // si toooodos los campos son verdaderos
-        console.log("enviado!!");
         formulario.style.display="none";
         enviado.innerHTML="";
         enviado.style.display="block";
         var pCabecera = document.createElement("p");
         var pPie = document.createElement("p");
-        pCabecera.innerText="Muchas gracias! \nLos datos enviados fueron los siguientes:";
+        pCabecera.innerText="Muchas gracias! \nLos datos enviados fueron los siguientes: \n \n";
         enviado.appendChild(pCabecera);
         var lista = document.createElement("ul");
         for(let i=0; i<keys.length; i++){
@@ -124,16 +121,17 @@ formulario.addEventListener('submit', (e) => {// Lo que ejecuta el boton de envi
             var li = document.createElement("li");
             li.innerText = keys[i]+":  "+camposValor[keys[i]];
             lista.appendChild(li);
+            campos[keys[i]] = !campos[keys[i]];
         }
         enviado.appendChild(lista);
-        pPie.innerText="En breve estaremos en contacto.";
+        pPie.innerText="\n En breve estaremos en contacto ;D";
         enviado.appendChild(pPie);
         
     } else {
         errores.style.display="block";
         errores.innerHTML="";
         var pECabecera = document.createElement("p");
-        pECabecera.innerText="Revisar los error/es en el/los siguiente/s campo/s\n";
+        pECabecera.innerText="Revisar el/los error/es en el/los siguiente/s campo/s:\n \n";
         errores.appendChild(pECabecera);
         var lista = document.createElement("ul");        
         for(let i=0;i<keys.length;i++){
@@ -153,40 +151,6 @@ inputs.forEach((input)=>{
     input.addEventListener('blur', validar); // de igual manera si se le quita el foco al input
 });
 
+//Lo mismo que el forEach de arriba pero con el textarea, al no ser tipo input lo hice aparte
 document.getElementById('mensaje').addEventListener('keyup', validar);
 document.getElementById('mensaje').addEventListener('blur', validar);
-
-
-/* document.getElementById("submit").onclick=function () {
-    let formNombre = document.forms["formulario"]["nombre"].value;
-    let formNombreEmp = document.forms["formulario"]["nombreEmpresa"].value;
-    let formEmail = document.forms["formulario"]["e-Mail"].value;
-    let formMensaje = document.forms["formulario"]["mensaje"].value;
-
-    if ( formNombre == "") {
-        alert("No ha ingresado un Nombre");
-        return false;
-    }
-
-    if (document.getElementById("si").checked || document.getElementById("no").checked){
-        if (document.getElementById("si").checked && formNombreEmp == "") {
-            alert("No ha ingresado el nombre de la empresa / comercio");
-            return false;
-        }
-    } else {
-        alert("¿Se comunica en representación de una empresa o comercio?");
-        return false;
-    }
-
-    if ( formEmail == "") {
-        alert("No ha ingresado un e-Mail");
-        return false;
-    }
-
-    if ( formMensaje == "") {
-        alert("No ha ingresado el motivo del contacto");
-        return false;
-    }
-    
-    alert("formulario enviado")
-} */

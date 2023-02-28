@@ -26,14 +26,15 @@ nav img{
     display: block;
     margin: auto;
     border-radius: 50%;
-    margin-top: 20%;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 nav li{
     list-style-type: none;
     display: flex;
     margin: 15px auto;
     padding: 0;
-    height: 75px;
+    height: 70px;
     padding-left: 5px;
     align-items: center;
 }
@@ -44,10 +45,17 @@ nav a{
 
 nav button{
     text-align: left;
-    padding: 5px;
+    padding: 3px;
     text-decoration: none;
     height: 75px;
     margin: auto 0 20% 0;
+}
+
+#juntoAForm{
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    color: white;
+    padding: 3%;
 }
 
 .boton{
@@ -120,8 +128,8 @@ section ul li{
     width: 15%;
     background-color: midnightblue;
     color: white;
-    padding: 1px 6px;
-    border: 1px outset black;
+    padding: 2px 6px;
+    border: 2px solid rgb(26, 26, 26);
     font-family: 'Montserrat', sans-serif;
     font-size: medium;
     font-weight: bold;
