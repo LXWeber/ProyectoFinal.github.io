@@ -51,11 +51,22 @@ nav button{
     margin: auto 0 20% 0;
 }
 
-#juntoAForm{
+
+.JAFoculto{
+	display: none;
+	opacity: 0;
+	/* visibility: hidden; */
+}
+
+.JAFvisible{
+	display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: medium;
     color: white;
     padding: 3%;
+	opacity: 1;
+	transition: all 1s ease;
+	/* visibility: visible; */
 }
 
 .boton{

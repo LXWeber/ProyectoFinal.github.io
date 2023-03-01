@@ -4,7 +4,8 @@ document.getElementById("contacto").onclick=function(){
     goBack.style.display="block";
     contacto.style.display="none";
     navbar.style.display="none";
-    juntoAForm.style.display="block";
+    /* juntoAForm.style.display="block"; */
+    juntoAForm.classList.toggle('JAFvisible');
 };
 
 document.getElementById("goBack").onclick=function(){
@@ -17,7 +18,14 @@ document.getElementById("goBack").onclick=function(){
     goBack.style.display="none";
     contacto.style.display="block";
     navbar.style.display="block";
-    juntoAForm.style.display="none";
+    /* juntoAForm.style.display="none"; */
+    juntoAForm.classList.toggle('JAFvisible');
+    
+    //Esto vuelve todos los campos falsos al volver al CV
+    const keys = Object.keys(campos);
+    for(let i=0; i<keys.length; i++){
+        campos[keys[i]] = false;
+    }
 };
 
 document.forms["formulario"]["si"].onclick=function(){
